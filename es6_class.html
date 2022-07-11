@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Creating object using ES6 classes in Javascript</title>
+</head>
+<body>
+    <h1>Please have a look at the console</h1>
+<script>
+    class Employee {
+        constructor(fname, lname) {
+            this.firstName = fname;
+            this.lastName = lname;
+        }
+
+        printFullName() {
+            console.log(this.firstName + " " + this.lastName);
+        }
+    }
+
+    const employee1 = new Employee('testFirstName', 'testLastName');
+
+    console.log(employee1.firstName); // testFirstName
+    console.log(employee1.lastName); // testLastName
+    employee1.printFullName();
+
+</script>
+
+</body>
+</html>
+
+

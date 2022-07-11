@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Creating object from more than one existing objects in Javascript</title>
+</head>
+<body>
+    <h1>Please have a look at the console</h1>
+<script>
+    const employeeObject = {
+        employeeName: "JS Concepts",
+        employeeBasicSalary: 10000,
+        employeeHRA: function() {
+            return this.employeeBasicSalary*10/100;
+        },
+        employeeFullSalary: function() {
+            return this.employeeBasicSalary + this.employeeHRA();
+        }
+    };
+    const employeeOrganization = {
+        organizationName: "JS organization",
+        location: "India",
+    }
+
+    var objectAssignMethod = Object.assign({}, employeeObject, employeeOrganization);
+    console.log(objectAssignMethod.employeeFullSalary()); 
+    // 11000
+    console.log(objectAssignMethod.organizationName);
+    // JS organization
+</script>
+
+</body>
+</html>
+
+

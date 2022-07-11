@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Creating object using new object constructor method in Javascript</title>
+</head>
+<body>
+    <h1>Please have a look at the console</h1>
+
+<script>
+    const employeeObject = new Object();
+    employeeObject.employeeName = "JS Concepts",
+    employeeObject.employeeBasicSalary = 10000,
+    employeeObject.employeeHRA = function() {
+            return this.employeeBasicSalary*10/100;
+        };
+    employeeObject.employeeFullSalary = function() {
+            return this.employeeBasicSalary + this.employeeHRA();
+        };
+
+    console.log(employeeObject.employeeFullSalary()); 
+    // 11000
+    console.log(employeeObject.employeeName);
+    // JS Concepts
+    console.log(employeeObject.employeeBasicSalary);
+    // 10000
+    console.log(employeeObject.employeeHRA());
+    // 1000
+</script>
+
+</body>
+</html>
+
+

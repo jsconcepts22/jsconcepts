@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Creating object from an existing object in Javascript</title>
+</head>
+<body>
+    <h1>Please have a look at the console</h1>
+
+<script>    
+    const existingObject = {
+        name: "JS Concepts",
+        age: 1,
+        display: function() {
+            return this.name + " is " + this.age + " years old!";
+        }
+    }
+    const createObject = Object.create(existingObject);
+    console.log(createObject); 
+    // age: 1, display: ƒ (), name: "JS Concepts"
+    console.log(createObject.age); // 1
+    console.log(createObject.display()); 
+    // JS Concepts is 1 years old!
+    createObject.age = "24";
+    console.log(createObject.age); //24
+    console.log(createObject.display()); 
+    // JS Concepts is 24 years old!
+    createObject.subject = "javascript";
+    createObject.showUpdated = function() {
+        return this.name + " is " + this.age + " years old!";
+    }
+    console.log(createObject.showUpdated()); 
+    // JS Concepts is 24 years old!
+</script>
+
+</body>
+</html>
+
+
